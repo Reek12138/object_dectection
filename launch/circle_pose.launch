@@ -1,0 +1,14 @@
+<launch>
+    <node pkg="demo01_ws" type="circle_pose_gt" name="circle_pose_gt" output="screen" />
+    <node pkg="demo01_ws" type="circle_pose" name="circle_pose" output="screen" />
+    <node pkg="demo01_ws" type="depth_image" name="depth_image" output="screen" />
+
+    <node pkg="demo01_ws" type="select" name="select" output="screen" >
+    <!-- <param name="depth_threshold" value="10" /> -->
+
+    </node>
+
+    <node pkg="demo01_ws" type="threshold" name="threshold" output="screen" />
+    <node pkg="demo01_ws" type="circle_depth_average" name="circle_depth_average" output="screen" />
+
+</launch>

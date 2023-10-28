@@ -1,0 +1,24 @@
+<launch>
+
+  <node pkg="stereo_image_proc" type="stereo_image_proc" name="stereo_image_proc" output="screen" ns="/airsim_node/drone_1">
+    <remap from="left/image_raw" to="front_left/Scene"/>
+    <remap from="right/image_raw" to="front_right/Scene"/>
+    <remap from="left/camera_info" to="front_left/Scene/camera_info"/>
+    <remap from="right/camera_info" to="front_right/Scene/camera_info"/>
+
+    <param name="min_disparity" value="0.5" />
+    <param name="correlation_window_size" value="7" />
+    <param name="disparity_range" value="32" />
+    <param name="uniqueness_ratio" value="17" />
+    <param name="texture_threshold" value="10" />
+    <param name="p1" value="1000" />
+    <param name="p2" value="1080" />
+    <param name="stereo_algorithm" value="1" />
+  </node>
+
+  <node pkg="image_view" type="stereo_view" name="stereo_view" args="stereo:=airsim_node/drone_1 image:=image_rect">
+  </node>
+
+  
+
+</launch>
