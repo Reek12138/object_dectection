@@ -1,1 +1,1 @@
-this is a noob circle detection rely on yolov5 
+this is a noob circle detection deen on yolov5 
